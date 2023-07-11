@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +10,28 @@
         .formato-p {
             display: block;
         }
+
         .formato-l {
             display: none;
         }
+
+        @media screen and (orientation: landscape) {
+            .formato-p {
+                display: none;
+            }
+
+            .formato-l {
+                display: block;
+            }
+        }
     </style>
 </head>
+
 <body>
-    
+
     <h3 class="formato-p">Estou em formato de retrato (portrait)</h3>
     <h3 class="formato-l">Estou em formato de paisagem (landscape</h3>
 
 </body>
+
 </html>
