@@ -10,10 +10,10 @@ var c = 4.25e+6     // com anotação exponencial, o mesmo que 4.25e6 ou 4250000
 // Infinity
 console.log(100/0)
 
-// NaN
+// NaN - not a number
 console.log(0/0)
 
-// Boolean
+// Boolean - true or false
 var administrador = false
 var operario = true
 
