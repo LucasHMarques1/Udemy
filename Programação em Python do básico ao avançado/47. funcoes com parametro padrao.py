@@ -64,3 +64,51 @@ def subtracao(num1, num2):
 
 print(mat(2, 3))
 print(mat(2, 2, subtracao))
+
+
+# Escopo - Evitar problemas e confusões...
+
+# Variaveis globais
+# Variaveis locais
+
+instrutor = 'Geek' # Variável global
+
+def diz_oi():
+    instrutor = 'Python' # Variável local
+    return f'Oi {instrutor}'
+print(diz_oi())
+
+# OBS: Se tivermos uma variável local com o mesmo nome de uma variável global, a local terá preferência.
+
+def diz_oi():
+    prof = 'Geek' # Variável local
+    return f'Olá {prof}'
+print(diz_oi())
+# print(prof) # NameError
+
+# Atenção com variáveis globais (Se puder evitar, evite!)
+total = 0
+
+def incrementa():
+    global total # Avisamos que queremos utilizar a variável global
+
+    total = total + 1 # UnboundLocalError
+    return total
+
+print(incrementa())
+
+
+# Podemos ter funções que são declaradas dentro de funções, e também tem uma forma especial de escopo de variável
+def fora():
+    contador = 0
+    def dentro():
+        nonlocal contador
+        contador = contador + 1
+        return contador
+    return dentro()
+
+print(fora())
+print(fora())
+print(fora())
+
+# print(dentro()) # NameError
